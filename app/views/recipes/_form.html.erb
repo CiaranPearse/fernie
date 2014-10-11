@@ -1,0 +1,30 @@
+<%= simple_form_for(@recipe) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :recipeid %>
+    <%= f.input :title %>
+    <%= f.input :description %>
+    <%= f.input :ingredients %>
+    <%= f.input :preptime %>
+    <%= f.input :cooktime %>
+    <%= f.input :totaltime %>
+    <%= f.association :publisher %>
+    <%= f.association :diet %>
+    <%= f.association :course %>
+    <%= f.association :ease %>
+    <%= f.input :ratenum %>
+    <%= f.input :commentnum %>
+    <%= f.input :facebooknum %>
+    <%= f.input :twitternum %>
+    <%= f.input :pinnum %>
+    <%= f.input :stumblenum %>
+    <%= f.input :gplusnum %>
+    <%= f.input :sumofall %>
+    <%= f.input :cscore %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

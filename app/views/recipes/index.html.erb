@@ -1,0 +1,63 @@
+<h1>Listing recipes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Recipeid</th>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Ingredients</th>
+      <th>Preptime</th>
+      <th>Cooktime</th>
+      <th>Totaltime</th>
+      <th>Publisher</th>
+      <th>Diet</th>
+      <th>Course</th>
+      <th>Ease</th>
+      <th>Ratenum</th>
+      <th>Commentnum</th>
+      <th>Facebooknum</th>
+      <th>Twitternum</th>
+      <th>Pinnum</th>
+      <th>Stumblenum</th>
+      <th>Gplusnum</th>
+      <th>Sumofall</th>
+      <th>Cscore</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @recipes.each do |recipe| %>
+      <tr>
+        <td><%= recipe.recipeid %></td>
+        <td><%= recipe.title %></td>
+        <td><%= recipe.description %></td>
+        <td><%= recipe.ingredients %></td>
+        <td><%= recipe.preptime %></td>
+        <td><%= recipe.cooktime %></td>
+        <td><%= recipe.totaltime %></td>
+        <td><%= recipe.publisher %></td>
+        <td><%= recipe.diet %></td>
+        <td><%= recipe.course %></td>
+        <td><%= recipe.ease %></td>
+        <td><%= recipe.ratenum %></td>
+        <td><%= recipe.commentnum %></td>
+        <td><%= recipe.facebooknum %></td>
+        <td><%= recipe.twitternum %></td>
+        <td><%= recipe.pinnum %></td>
+        <td><%= recipe.stumblenum %></td>
+        <td><%= recipe.gplusnum %></td>
+        <td><%= recipe.sumofall %></td>
+        <td><%= recipe.cscore %></td>
+        <td><%= link_to 'Show', recipe %></td>
+        <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
+        <td><%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Recipe', new_recipe_path %>
